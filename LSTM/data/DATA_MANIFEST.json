@@ -1,0 +1,13 @@
+{
+  "ticker": "AAPL",
+  "interval": "1d",
+  "start": "2012-01-01",
+  "end": "2025-09-01",
+  "rows": 3435,
+  "first_ts": "2012-01-03 00:00:00",
+  "last_ts": "2025-08-29 00:00:00",
+  "sha256": "211503a5def778d483c91418c2a091f99cbc8c9520098e8ffb8af80efdea36d2",
+  "created_utc": "2026-01-01T14:04:01Z",
+  "tz": "naive",
+  "source": "yfinance"
+}

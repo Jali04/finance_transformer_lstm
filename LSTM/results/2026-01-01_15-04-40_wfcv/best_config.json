@@ -1,0 +1,16 @@
+{
+  "feature_set": "v2",
+  "features_used": "mom+vol",
+  "n_features": 11,
+  "lookback": 60,
+  "width1": 32,
+  "width2": 16,
+  "dropout": 0.1,
+  "lr": 0.0005,
+  "cell": "GRU",
+  "mcc_mean": 0.065751403238187,
+  "mcc_std": 0.03483550388528836,
+  "auprc_mean": 0.525341765808942,
+  "auprc_std": 0.032368033341121434,
+  "auroc_mean": 0.5140417293693993
+}
