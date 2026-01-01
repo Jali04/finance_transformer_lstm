@@ -2,15 +2,15 @@
   "horizon": 1,
   "epsilon": 0.0005,
   "mode": "abs",
-  "n": 3402,
+  "n": 3991,
   "class_counts": {
-    "0": 1669,
-    "1": 1733
+    "0": 1938,
+    "1": 2053
   },
-  "pos_rate": 0.5094062316284539,
+  "pos_rate": 0.514407416687547,
   "exports": [
-    "../data/AAPL_1d_2012-01-01_2025-09-01_cls_h1_abs0p0005.csv",
-    "../data/AAPL_1d_2012-01-01_2025-09-01_cls_h1_abs0p001.csv",
-    "../data/AAPL_1d_2012-01-01_2025-09-01_cls_h1_abs0p002.csv"
+    "../data/AAPL_1d_2010-01-01_2026-01-01_cls_h1_abs0p0005.csv",
+    "../data/AAPL_1d_2010-01-01_2026-01-01_cls_h1_abs0p001.csv",
+    "../data/AAPL_1d_2010-01-01_2026-01-01_cls_h1_abs0p002.csv"
   ]
 }

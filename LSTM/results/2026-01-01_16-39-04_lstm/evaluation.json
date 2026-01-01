@@ -1,0 +1,222 @@
+{
+  "config": {
+    "ticker": "AAPL",
+    "start": "2019-01-01",
+    "end": "2026-01-01",
+    "interval": "1d",
+    "horizon": 1,
+    "lookback": 60,
+    "featureset": "v2",
+    "features": [
+      "logret_1d",
+      "logret_3d",
+      "logret_5d",
+      "realized_vol_10",
+      "bb_pos",
+      "rsi_14",
+      "macd",
+      "macd_sig",
+      "macd_diff",
+      "vol_z_20",
+      "sma_diff"
+    ],
+    "scaler": "StandardScaler",
+    "seed": 42,
+    "batch": 64,
+    "epochs": 100,
+    "cell": "GRU",
+    "width1": 32,
+    "width2": 16,
+    "dropout": 0.1,
+    "recurrent_dropout_used": 0.1,
+    "ln_layout": "both",
+    "lr": 0.0005,
+    "loss": "BCE",
+    "epsilon_mode": "abs",
+    "epsilon": 0.0005,
+    "train_csv": "../data/AAPL_1d_2019-01-01_2026-01-01_cls_h1_abs0p0005.csv",
+    "features_yaml": "../data/features_v2.yml",
+    "wfcv_best_config_source": "..\\results\\2026-01-01_16-38-24_wfcv\\best_config.json",
+    "ablations": {
+      "shuffle_train": true,
+      "no_recurrent_dropout": false,
+      "ln_layout": "both",
+      "l2_dense": 1e-05
+    }
+  },
+  "features_used": [
+    "logret_1d",
+    "logret_3d",
+    "logret_5d",
+    "realized_vol_10",
+    "bb_pos",
+    "rsi_14",
+    "macd",
+    "macd_sig",
+    "macd_diff",
+    "vol_z_20",
+    "sma_diff"
+  ],
+  "calibration": {
+    "chosen": "isotonic",
+    "paths": {
+      "isotonic": "..\\results\\2026-01-01_16-39-04_lstm\\calibrator_isotonic.joblib"
+    },
+    "val_brier": {
+      "raw": 0.2698869181400773,
+      "iso": 0.24003821451509338,
+      "platt": 0.24244664012984948
+    },
+    "test_brier": {
+      "raw": 0.27140173369138343,
+      "candidate": 0.26674377925682646,
+      "used": 0.26674377925682646
+    }
+  },
+  "label_resolved_from": {
+    "features_yaml": "../data/features_v2.yml",
+    "ticker": "AAPL",
+    "interval": "1d",
+    "start": "2019-01-01",
+    "end": "2026-01-01",
+    "horizon": 1,
+    "mode": "abs",
+    "epsilon": 0.0005
+  },
+  "threshold_selection": {
+    "strategy": "max_mcc_with_pos_rate_bounds_centered_on_val_rate",
+    "threshold": 0.5,
+    "pos_rate_bounds": [
+      0.485,
+      0.6849999999999999
+    ],
+    "val_pos_rate": 0.585,
+    "val_mcc": 0.0,
+    "val_mcc_unbounded": {
+      "mcc": 0.08758364699586348,
+      "thr": 0.7222222089767456
+    },
+    "val_youden_j": {
+      "J": 0.05087014725567718,
+      "thr": 0.7222222089767456
+    },
+    "test_pred_pos_rate": 0.9054726368159204
+  },
+  "metrics": {
+    "test": {
+      "roc_auc": 0.4437500000000001,
+      "auprc": 0.4958190845602372,
+      "auprc_baseline": 0.5223880597014925,
+      "brier": 0.26674377925682646,
+      "balanced_accuracy": 0.4992559523809524,
+      "mcc": -0.0025406713983235365,
+      "confusion_matrix": [
+        [
+          9,
+          87
+        ],
+        [
+          10,
+          95
+        ]
+      ],
+      "report": {
+        "0": {
+          "precision": 0.47368421052631576,
+          "recall": 0.09375,
+          "f1-score": 0.1565217391304348,
+          "support": 96.0
+        },
+        "1": {
+          "precision": 0.521978021978022,
+          "recall": 0.9047619047619048,
+          "f1-score": 0.662020905923345,
+          "support": 105.0
+        },
+        "accuracy": 0.5174129353233831,
+        "macro avg": {
+          "precision": 0.4978311162521689,
+          "recall": 0.4992559523809524,
+          "f1-score": 0.40927132252688986,
+          "support": 201.0
+        },
+        "weighted avg": {
+          "precision": 0.4989123209861623,
+          "recall": 0.5174129353233831,
+          "f1-score": 0.42058846805210426,
+          "support": 201.0
+        }
+      }
+    },
+    "mcc_bootstrap_ci": [
+      -0.04449467511564318,
+      0.004832214939226702,
+      0.03807065333301766
+    ]
+  },
+  "backtest": {
+    "n_trades": 182,
+    "avg_holding_h": 1,
+    "strategy_t": {
+      "CAGR": 0.38512856187497246,
+      "Sharpe": 0.9995384666503604,
+      "final_equity": 1.2888087378549533
+    },
+    "strategy_t1": {
+      "CAGR": 0.27265673093542353,
+      "Sharpe": 0.7533347599914477,
+      "final_equity": 1.2120476963125681
+    },
+    "buy_hold": {
+      "CAGR": 0.3556914621148426,
+      "final_equity": 1.2747177112496337
+    }
+  },
+  "report_notes": {
+    "kpi_basis": "entry_t1_no_overlap",
+    "entry_t_is_upper_bound": true,
+    "pr_auc_baseline_note": "random baseline equals positive rate"
+  },
+  "backtest_costs": {
+    "roundtrip_bps_default": 15.0,
+    "slippage_bps_per_leg": 2.0,
+    "upper_bound_entry_t": {
+      "note": "nicht handelbar",
+      "CAGR": 0.3043958200731711,
+      "Sharpe": 0.8391779455392412,
+      "MaxDD": -0.229889627542892,
+      "final_equity": 1.2349232255843878,
+      "exposure": 0.9054726368159204,
+      "turnover": 12.0,
+      "n_trades": 7,
+      "hit_rate": 0.8571428571428571,
+      "median": 0.018539101736913012,
+      "iqr": 0.04441719542194943
+    },
+    "final_kpi_entry_t1": {
+      "note": "realistisch, T+1, No-Overlap",
+      "CAGR": -0.256529316524837,
+      "Sharpe": -1.455207789597525,
+      "MaxDD": -0.3156221589824083,
+      "final_equity": 0.7894372103350443,
+      "exposure": 0.4527363184079602,
+      "turnover": 182.0,
+      "n_trades": 91,
+      "hit_rate": 0.4945054945054945,
+      "median": -0.0001646598910205121,
+      "iqr": 0.014748897262541139,
+      "CAGR_CI": [
+        -0.5677548462902885,
+        -0.14892355390062356,
+        0.18743106187098385
+      ],
+      "Sharpe_CI": [
+        -3.8839491214522206,
+        -0.9321335215875282,
+        1.0206938710897717
+      ]
+    },
+    "sensitivity_csv": "../results/2026-01-01_16-39-04_lstm/cost_sensitivity.csv",
+    "equity_costed_png": "../results/2026-01-01_16-39-04_lstm/figures/equity_costed.png"
+  }
+}

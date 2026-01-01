@@ -14,7 +14,7 @@ class TimeSeriesTransformer(nn.Module):
         )
         self.transformer = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
         
-        self.reg_head = nn.Sequential(
+        self.cls_head = nn.Sequential(
             nn.LayerNorm(d_model),
             nn.Linear(d_model, d_model // 2),
             nn.GELU(),
@@ -30,4 +30,4 @@ class TimeSeriesTransformer(nn.Module):
         
         # Global Average Pooling über die Zeitdimension (S)
         pooled = h.mean(dim=1) 
-        return self.reg_head(pooled)
+        return self.cls_head(pooled)

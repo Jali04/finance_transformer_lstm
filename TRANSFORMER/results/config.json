@@ -1,0 +1,35 @@
+{
+  "cfg": {
+    "ticker": "AAPL",
+    "start": "2010-01-01",
+    "end": "2025-01-01",
+    "seq_len": 40,
+    "d_model": 64,
+    "nhead": 4,
+    "num_layers": 2,
+    "dim_ff": 128,
+    "dropout": 0.3,
+    "lr": 0.0001,
+    "weight_decay": 0.05,
+    "batch_size": 64,
+    "epochs": 100,
+    "patience": 15,
+    "train_end": "2023-12-31",
+    "valid_end": "2024-12-31",
+    "seed": 42,
+    "results_dir": "../results"
+  },
+  "feat_cols": [
+    "logret_1d",
+    "logret_3d",
+    "logret_5d",
+    "realized_vol_10",
+    "bb_pos",
+    "rsi_14",
+    "macd",
+    "macd_sig",
+    "macd_diff",
+    "vol_z_20",
+    "sma_diff"
+  ]
+}
