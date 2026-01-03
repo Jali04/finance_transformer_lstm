@@ -1,0 +1,24 @@
+{
+  "seed": 42,
+  "epochs_grid": 1,
+  "n_folds": 2,
+  "val_frac": 0.2,
+  "min_train_frac": 0.45,
+  "lookback_grid": [
+    60
+  ],
+  "hp_grid_size": 1,
+  "feature_subsets": [
+    "all"
+  ],
+  "train_csv": "../data/AAPL_1d_2010-01-01_2026-01-01_cls_h1_abs0p0005.csv",
+  "label_resolution": {
+    "source": "yaml",
+    "yaml_path": "../data/features_v2.yml"
+  },
+  "labels": {
+    "horizon": 1,
+    "mode": "abs",
+    "epsilon": 0.0005
+  }
+}

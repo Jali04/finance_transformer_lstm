@@ -6,8 +6,8 @@
   "rows": 4024,
   "first_ts": "2010-01-04 00:00:00",
   "last_ts": "2025-12-31 00:00:00",
-  "sha256": "6b053eb9546f26e1003dd2ab7e9c6940fb3a766f6b5c532e325e7ca2a0291873",
-  "created_utc": "2026-01-01T17:18:07Z",
+  "sha256": "93e9429108660c624e04f61adb62b5d520dabfd511328ed3c89b5d46c58b2c25",
+  "created_utc": "2026-01-03T01:10:22Z",
   "tz": "naive",
   "source": "yfinance"
 }
