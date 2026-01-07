@@ -1,0 +1,101 @@
+{
+  "run_dir": "C:\\Users\\jacin\\DL_PROJECT\\finance_transformer_lstm\\LSTM\\results\\2026-01-07_21-29-55_lstm",
+  "generated_utc": "2026-01-07T20:36:28Z",
+  "data": {
+    "ticker": "AAPL",
+    "interval": "1d",
+    "period": [
+      "2010-01-01",
+      "2026-01-01"
+    ],
+    "horizon": 1,
+    "lookback": 60,
+    "featureset": "v2",
+    "features_used": [
+      "logret_1d",
+      "logret_3d",
+      "logret_5d",
+      "realized_vol_10",
+      "bb_pos",
+      "rsi_14",
+      "macd",
+      "macd_sig",
+      "macd_diff",
+      "vol_z_20",
+      "sma_diff"
+    ]
+  },
+  "label": null,
+  "calibration": {
+    "chosen": "isotonic",
+    "val_brier": {
+      "raw": 0.25493665454472003,
+      "iso": 0.22891779223279188,
+      "platt": 0.24250860461141213
+    },
+    "test_brier": null,
+    "note": "Kalibrierung auf Validation Set, Test Set Werte nur zur Info."
+  },
+  "threshold": {
+    "strategy": "max_mcc_with_pos_rate_bounds_centered_on_val_rate",
+    "threshold": 0.640625,
+    "val_mcc": 0.1768839737843581,
+    "test_pred_pos_rate": null
+  },
+  "classification_test": {
+    "roc_auc": 0.4986824769433465,
+    "auprc": 0.5205507859516254,
+    "brier": 0.2834784748764382,
+    "balanced_accuracy": 0.5161945542380325,
+    "mcc": 0.03536882872840383
+  },
+  "backtest_gross": {
+    "n_trades": 134,
+    "avg_holding_h": 1,
+    "strategy_t": {
+      "CAGR": 0.2460897267407871,
+      "Sharpe": 0.7610082144287487,
+      "final_equity": 1.1871014823743753
+    },
+    "strategy_t1": {
+      "CAGR": 0.14004500610865356,
+      "Sharpe": 0.4365393796110782,
+      "final_equity": 1.104442878712368
+    },
+    "buy_hold": {
+      "CAGR": 0.3113395077609038,
+      "final_equity": 1.2280628859837972
+    }
+  },
+  "backtest_cost_pick": {
+    "model": "Entry@t+1 (No-Overlap)",
+    "roundtrip_bps": 15.0,
+    "trades": 14,
+    "exposure": 0.7015706806282722,
+    "turnover": 28.0,
+    "CAGR": 0.2106768148417805,
+    "Sharpe": 0.6432682814665989,
+    "MaxDD": -0.2298898169949922,
+    "final_equity": 1.1559262421020298
+  },
+  "baselines": [
+    {
+      "baseline": "Always-Up (Prior)",
+      "auprc": 0.5268022181146026,
+      "pos_rate": 0.5268022181146026,
+      "lift_factor": 1.0
+    },
+    {
+      "baseline": "Logistic Regression",
+      "auprc": 0.5206524604365337,
+      "pos_rate": 0.5268022181146026,
+      "lift_factor": 0.9883262494602271
+    },
+    {
+      "baseline": "Simple MACD",
+      "auprc": 0.517114161525639,
+      "pos_rate": 0.5268022181146026,
+      "lift_factor": 0.9816096890714762
+    }
+  ]
+}

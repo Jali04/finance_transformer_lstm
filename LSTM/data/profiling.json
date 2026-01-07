@@ -1,10 +1,10 @@
 {
   "n": 4024,
   "na_any": 0,
-  "close_min": 5.759779453277588,
+  "close_min": 5.7597808837890625,
   "close_max": 286.19000244140625,
   "logret_1d_mean": 0.0009311759727262421,
-  "logret_1d_std": 0.017738669948176383,
+  "logret_1d_std": 0.017738664639118232,
   "dup_timestamps": 0,
   "volume_zero_share": 0.0,
   "n_after_dropna_features": 3991

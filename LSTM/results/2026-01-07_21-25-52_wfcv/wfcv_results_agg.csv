@@ -1,0 +1,2 @@
+feature_set,features_used,n_features,lookback,width1,width2,dropout,lr,cell,mcc_mean,mcc_std,auprc_mean,auprc_std,auroc_mean
+v2,all,11,60,64,32,0.2,0.0005,GRU,0.07007188351568035,0.0006722553204019479,0.5348475813858844,0.01595330390634762,0.5008213485769761
